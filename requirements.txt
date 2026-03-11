@@ -1,0 +1,18 @@
+# ── Core AI Framework ─────────────────────────────────────────────────────────
+crewai>=0.11.0
+crewai-tools>=0.1.0
+
+# ── LLM Provider (Google Gemini Only) ─────────────────────────────────────────
+langchain-google-genai>=1.0.0
+
+# ── Data Validation ───────────────────────────────────────────────────────────
+pydantic>=2.6.0
+
+# ── Environment Management ────────────────────────────────────────────────────
+python-dotenv>=1.0.0
+
+# ── Terminal UI / Output Formatting ──────────────────────────────────────────
+rich>=13.7.0
+
+# ── Optional: Streamlit Web UI ────────────────────────────────────────────────
+streamlit>=1.32.0
