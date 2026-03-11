@@ -38,7 +38,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
-        "About": "Multi-Agent AI Study Material Generator | Powered by CrewAI + OpenAI",
+        "About": "Multi-Agent AI Study Material Generator | Powered by CrewAI + Google Gemini",
     },
 )
 
@@ -146,13 +146,12 @@ def render_sidebar() -> tuple[str, str]:
 
         # System info
         st.markdown("---")
-        st.markdown("### ⚙ System")
         st.markdown(
             f'<div class="info-card">'
-            f'<b>Model:</b> {config.OPENAI_MODEL}<br>'
+            f'<b>Model:</b> {config.GOOGLE_MODEL}<br>'
             f'<b>Framework:</b> CrewAI<br>'
             f'<b>Agents:</b> Researcher + Writer<br>'
-            f'<b>API:</b> {"✔ Configured" if config.OPENAI_API_KEY else "✘ Missing Key"}'
+            f'<b>API:</b> {"✔ Configured" if config.GOOGLE_API_KEY else "✘ Missing Key"}'
             f'</div>',
             unsafe_allow_html=True,
         )
@@ -236,7 +235,7 @@ def run_pipeline(topic: str, output_type: str) -> None:
     if config_errors:
         for err in config_errors:
             st.error(f"⚠ Configuration Error: {err}")
-        st.info("Copy `.env.example` → `.env` and add your `OPENAI_API_KEY`.")
+        st.info("Copy `.env.example` → `.env` and add your `GOOGLE_API_KEY`.")
         return
 
     # ── Progress display ──────────────────────────────────────────────────────
